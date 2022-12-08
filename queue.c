@@ -27,7 +27,7 @@ void enqueue(struct queue *ptr, int value)
     }
 }
 
-void dequeue(struct queue *ptr)
+int dequeue(struct queue *ptr)
 {
     if (isEmpty(ptr))
     {
@@ -35,7 +35,10 @@ void dequeue(struct queue *ptr)
     }
     else
     {
+        int value;
+        value = ptr->arr[ptr->f];
         ptr->f++;
+        return value;
     }
 }
 
